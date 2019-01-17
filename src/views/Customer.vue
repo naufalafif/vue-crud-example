@@ -11,7 +11,10 @@
             <tbody>
                 <tr v-for="row in data" :key="row">
                     <td v-for="key in Object.keys(row)" :key="key"> {{row[key]}} </td>    
-                    <td>Aksi</td>   
+                    <td>
+                        <a class="button is-small is-primary">Edit</a>
+                        <a class="button is-small is-danger">Delete</a>
+                    </td>   
                 </tr>
             </tbody>
         </table> 
