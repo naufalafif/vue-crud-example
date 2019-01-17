@@ -17,7 +17,7 @@
             <div class="navbar-item">
                 <div class="buttons">
                 <a class="button is-primary">
-                    <strong>Made with love</strong>
+                    <strong>Made by naufalafif58</strong>
                 </a>
                 </div>
             </div>
