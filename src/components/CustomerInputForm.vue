@@ -94,11 +94,11 @@ export default {
             
             if(!this.editId){
                 payload['id'] =  this.$store.state.customers.length!=0? Math.max(...this.$store.state.customers.map(i => i.id)) + 1 : 0;
-                const customer = Object.create(payload);
+                const customer = {...payload};
                 this.$store.dispatch('addCustomer',customer);
             }else{
                 payload['id'] =   this.editId;
-                const customer = Object.create(payload);
+                const customer = {...payload}
                 this.$store.dispatch('editCustomer',customer);                
             }
         }

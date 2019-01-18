@@ -48,7 +48,7 @@ const store = new Vuex.Store({
             
         },
         addCustomer({commit},payload){
-            commit('add_customer',{'id': payload.id, 'first_name': payload.first_name, 'last_name': payload.last_name, 'date': payload.date, 'gender': payload.gender });
+            commit('add_customer',payload);
         },
         editCustomer({commit},payload){
             commit('edit_customer',{'id': payload.id, 'first_name': payload.first_name, 'last_name': payload.last_name, 'date': payload.date, 'gender': payload.gender })
