@@ -25,8 +25,8 @@
         </div>
     </div>
     <div class="column">
-        <a href="#" @click="showAdd=!showAdd" class="button" style="float:right;margin-top:-20px" v-bind:class="{'is-link':showAdd,'is-info':!showAdd}">Tambah</a>
-        <CustomerInputForm v-if="showAdd"></CustomerInputForm>
+        <a href="#" @click="addCustomer()" class="button" style="float:right;margin-top:-20px" >Add Customer</a>
+        <CustomerInputForm :editId="editId"></CustomerInputForm>
     </div>
 </div>    
 </template>
@@ -43,6 +43,7 @@ export default {
     data() {
             return {
                 showAdd:true,
+                editId:'',
             }
         },
     computed:{
@@ -53,11 +54,16 @@ export default {
             columns(){
                 return this.$store.state.customers.length>0 ?
                        Object.keys(this.$store.state.customers[0]) : []
-            },
+            }
         },
     methods:{
             editCustomer(customer){
+                this.editId = customer.id;
                 this.showAdd = false;
+            },
+            addCustomer(){
+                this.editId = "";
+                this.showAdd = true;
             },
             deleteCustomer(customer){
                 this.$swal({

@@ -17,6 +17,14 @@ const store = new Vuex.Store({
       },
       add_customer(state,payload){
           state.customers.push(payload);
+      },
+      edit_customer(state,payload){
+          state.customers = state.customers.map(i=> {
+            if(i.id==payload.id){
+                return payload;
+            }
+            return i;
+          })
       }
     },
     actions:{
@@ -41,6 +49,9 @@ const store = new Vuex.Store({
         },
         addCustomer({commit},payload){
             commit('add_customer',{'id': payload.id, 'first_name': payload.first_name, 'last_name': payload.last_name, 'date': payload.date, 'gender': payload.gender });
+        },
+        editCustomer({commit},payload){
+            commit('edit_customer',{'id': payload.id, 'first_name': payload.first_name, 'last_name': payload.last_name, 'date': payload.date, 'gender': payload.gender })
         }
 
     }
