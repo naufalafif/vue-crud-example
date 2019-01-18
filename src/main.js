@@ -3,14 +3,16 @@ import App from './App.vue'
 import router from  './routers'
 import Buefy from 'buefy'
 import 'buefy/dist/buefy.css'
-import customers from './models/customer'
+import VueSweetalert2 from 'vue-sweetalert2';
+import store from './store'
 
+Vue.use(VueSweetalert2)
 Vue.use(Buefy)
 
-Vue.prototype.$dataset = customers;
 // Vue.config.productionTip = false
 
 new Vue({
   router,
+  store,
   render: h => h(App),
 }).$mount('#app')
