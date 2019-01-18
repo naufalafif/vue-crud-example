@@ -12,8 +12,10 @@
                 <tr v-for="(row,index_row) in data" :key="index_row">
                     <td v-for="(column,index) in columns" :key="index"> {{row[column]}} </td>    
                     <td>
-                        <a class="button is-small is-primary">Edit</a>
-                        <a class="button is-small is-danger" @click="deleteCustomer(row.id)">Delete</a>
+                        <p class="buttons">
+                            <a class="button is-small is-primary" @click="editCustomer(row)">Edit</a>
+                            <a class="button is-small is-danger" @click="deleteCustomer(row.id)">Delete</a>
+                        </p>
                     </td>   
                 </tr>
             </tbody>
@@ -23,7 +25,8 @@
         </div>
     </div>
     <div class="column">
-        <CustomerInputForm></CustomerInputForm>
+        <a href="#" @click="showAdd=!showAdd" class="button" style="float:right;margin-top:-20px" v-bind:class="{'is-link':showAdd,'is-info':!showAdd}">Tambah</a>
+        <CustomerInputForm v-if="showAdd"></CustomerInputForm>
     </div>
 </div>    
 </template>
@@ -39,7 +42,7 @@ export default {
     },
     data() {
             return {
-                
+                showAdd:true,
             }
         },
     computed:{
@@ -53,6 +56,9 @@ export default {
             },
         },
     methods:{
+            editCustomer(customer){
+                this.showAdd = false;
+            },
             deleteCustomer(customer){
                 this.$swal({
                     title: 'Are you sure?',
