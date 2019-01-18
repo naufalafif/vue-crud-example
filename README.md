@@ -4,7 +4,9 @@ Example of vue js in simple CRUD app using dummy data. this app also use other p
 
 
 ## Dependencies
+
 These are package that i used to build this simple app.
+
 | Library | Version  | Github |
 |--|--|--|
 | buefy | 0.7.2 | https://github.com/buefy/buefy |
