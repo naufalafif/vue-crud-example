@@ -70,11 +70,7 @@ export default {
                 this.customer.last_name = current.last_name;
                 this.customer.gender = current.gender;
             }else{
-                this.customer = {
-                first_name:'',
-                last_name:'',
-                gender:'',
-                }
+                this.resetFormData()
             }
         }
     },
@@ -87,6 +83,14 @@ export default {
         }
     },
     methods:{
+        resetFormData() {
+
+                this.customer = {
+                first_name:'',
+                last_name:'',
+                gender:'',
+                }
+        },
         submit(event){
             event.preventDefault();  
             var payload = this.customer;
@@ -96,6 +100,7 @@ export default {
                 payload['id'] =  this.$store.state.customers.length!=0? Math.max(...this.$store.state.customers.map(i => i.id)) + 1 : 0;
                 const customer = {...payload};
                 this.$store.dispatch('addCustomer',customer);
+                this.resetFormData()
             }else{
                 payload['id'] =   this.editId;
                 const customer = {...payload}
@@ -105,7 +110,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

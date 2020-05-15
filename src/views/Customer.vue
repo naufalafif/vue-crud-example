@@ -9,7 +9,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(row,index_row) in data" :key="index_row">
+                <tr v-for="(row,index_row) in data" :key="index_row" v-bind:class="{ editing: editId === row.id }" >
                     <td v-for="(column,index) in columns" :key="index"> {{row[column]}} </td>    
                     <td>
                         <p class="buttons">
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="column">
-        <a href="#" @click="addCustomer()" class="button" style="float:right;margin-top:-20px" >Add Customer</a>
+        <a href="#" v-show="showAdd == false" @click="addCustomer()" class="button is-small is-danger" style="float:right;margin-top:-20px" >X</a>
         <CustomerInputForm :editId="editId"></CustomerInputForm>
     </div>
 </div>    
@@ -48,7 +48,6 @@ export default {
         },
     computed:{
             data(){
-                console.log('baru',this.$store.state.customers)
                 return this.$store.state.customers;
             },
             columns(){
@@ -97,5 +96,7 @@ export default {
 }
 </script>
 <style>
-
+.editing {
+    background-color: #fff8db;
+}
 </style>

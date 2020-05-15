@@ -16,7 +16,7 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                <a class="button is-primary">
+                <a class="button is-primary" @click="goToMySite()">
                     <strong>Made by naufalafif58</strong>
                 </a>
                 </div>
@@ -30,8 +30,8 @@
 export default {
     name:'Navbar',
     props:['links'],
-    created(){
-        console.log(this.links)
+    methods: {
+        goToMySite: () => window.open('https://naufalafif.com', '_blank')
     }
 }   
 

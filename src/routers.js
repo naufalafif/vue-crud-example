@@ -1,16 +1,16 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from './views/Home.vue'
-import Customer from './views/Customer.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import Home from "./views/Home.vue";
+import Customer from "./views/Customer.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   routes: [
-    { path: '/', name:"home", component: Home },
-    { path: '/customer', name:"customer", component: Customer },
-  ]
+    { path: "/", name: "home", component: Home },
+    { path: "/customer", name: "customer", component: Customer },
+  ],
 });
 
 export default router;
