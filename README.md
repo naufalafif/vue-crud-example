@@ -1,4 +1,4 @@
-# 🚀 **Vue crud example with vuex & vue-router**
+# 🚀 **Vue crud example with vuex & vue-router https://vue-crud-example.vercel.app/**
 
 ![](https://paper-attachments.dropbox.com/s_CA070E36714AACFD1E8BCB96B1683D9C56FC2587BFBF2900BBAB37978A6B8E12_1589529231065_vue-crud-example.png)
 
