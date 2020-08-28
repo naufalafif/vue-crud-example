@@ -25,11 +25,11 @@
             <label class="label">{{editAddText}} Gender</label>    
             <div class="control">
                 <label class="radio">
-                <input type="radio" v-model="customer.gender" value="Male" >
+                <input type="radio" v-model="customer.gender" value="Male" name='gender' required>
                 Male
                 </label>
                 <label class="radio">
-                <input type="radio" v-model="customer.gender" value="Female" >
+                <input type="radio" v-model="customer.gender" value="Female" name='gender'>
                 Female
                 </label>
             </div>
